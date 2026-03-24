@@ -19,11 +19,38 @@ const inter = Inter({
 export const metadata: Metadata = {
   title: "Painel de Atividades",
   description: "Painel de planejamento de atividades do Quórum",
+  metadataBase: new URL("https://dashboard-quorum.vercel.app/"),
   manifest: "/manifest.json",
+  icons: {
+    icon: "/icon-192.png",
+    apple: "/icon-192.png",
+  },
   appleWebApp: {
     capable: true,
     statusBarStyle: "black-translucent",
     title: "Atividades",
+  },
+  openGraph: {
+    title: "Painel de Atividades do Quórum",
+    description: "Acompanhamento, estatísticas e planejamento para atividades do Quórum.",
+    url: "https://dashboard-quorum.vercel.app/",
+    siteName: "Painel de Atividades",
+    locale: "pt_BR",
+    type: "website",
+    images: [
+      {
+        url: "/icon-512.png",
+        width: 512,
+        height: 512,
+        alt: "Ícone do Painel de Atividades",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Painel de Atividades do Quórum",
+    description: "Acompanhamento, estatísticas e planejamento para atividades do Quórum.",
+    images: ["/icon-512.png"],
   },
 };
 
@@ -41,9 +68,6 @@ export default function RootLayout({
 }) {
   return (
     <html lang="pt-BR" className={`${plusJakarta.variable} ${inter.variable}`}>
-      <head>
-        <link rel="apple-touch-icon" href="/icon-192.png" />
-      </head>
       <body className="min-h-screen">{children}</body>
     </html>
   );
