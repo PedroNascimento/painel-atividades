@@ -12,7 +12,7 @@ export function TabGroup({ tabs, children }: TabGroupProps) {
 
   return (
     <div className="flex flex-col items-center w-full">
-      <div className="mb-6 grid grid-cols-3 flex-wrap sm:flex sm:flex-nowrap w-full max-w-4xl justify-center gap-2 px-1">
+      <div className="sticky top-0 z-50 pt-2 pb-4 mb-2 bg-bg-screen/90 backdrop-blur-md grid grid-cols-3 flex-wrap sm:flex sm:flex-nowrap w-full max-w-4xl justify-center gap-2 px-1">
         {tabs.map((tab) => (
           <button
             key={tab.id}
